@@ -79,6 +79,7 @@ namespace ServiceBasedApplication.Controllers
             }
 
             var course = await _context.Courses.FindAsync(id);
+            
             if (course == null)
             {
                 return NotFound();
@@ -91,7 +92,7 @@ namespace ServiceBasedApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Title,Credits")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Credits")] Course course)
         {
             if (id != course.Id)
             {
