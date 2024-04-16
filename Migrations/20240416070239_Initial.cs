@@ -15,10 +15,10 @@ namespace ServiceBasedApplication.Migrations
                 name: "Courses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Credits = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(type: "TEXT", nullable: true),
+                    Credits = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,10 +29,10 @@ namespace ServiceBasedApplication.Migrations
                 name: "Student",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    LastName = table.Column<string>(type: "TEXT", nullable: true),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: true),
                     EnrollmentDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
@@ -44,11 +44,11 @@ namespace ServiceBasedApplication.Migrations
                 name: "Enrollment",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Grade = table.Column<int>(type: "int", nullable: true),
-                    CourseId = table.Column<int>(type: "int", nullable: false),
-                    StudentId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Grade = table.Column<int>(type: "INTEGER", nullable: true),
+                    CourseId = table.Column<int>(type: "INTEGER", nullable: false),
+                    StudentId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

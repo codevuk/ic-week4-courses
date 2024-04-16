@@ -10,7 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICourseService, CourseService>();
 
 builder.Services.AddDbContext<SchoolsDbContext>(options =>
-              options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+              options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
